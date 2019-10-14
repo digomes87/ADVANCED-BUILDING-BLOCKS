@@ -31,7 +31,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 ## Contact
 
 * Diego Gomes: [Github](https://github.com/digomes87), [Twitter](https://twitter.com/devdiegogo)
-* Elijah Obominuru: [Github](https://github.com/Elijahscriptdev), [Twitter](https://twitter.com/Elijahscriptdev)
+* Elijah Obominuru: [Github](https://github.com/Elijahscriptdev), [Twitter](https://twitter.com/ElijahObominuru)
 
 
 
