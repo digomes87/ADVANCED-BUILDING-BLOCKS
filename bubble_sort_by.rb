@@ -1,16 +1,34 @@
-def bubble_sort_by(array)
-  (array.length - 2).times do
-    (array.length -1).times do |index|
-      if yield(array[index], array[index+1]) > 0
-        array[index], array[index+1] = array[index+1], array[index]
+def bubble_sort_by(arr)
+  if block_given?
+      swap = -1
+      #bubble sort functionality
+      while swap != 0
+          swap = 0
+          for i in 0..(arr.length - 2) do
+  
+              if (yield(arr[i], arr[i+1]) > 0)
+                  arr[i], arr[i+1] = arr[i+1], arr[i]
+                  swap += 1
+              end
+  
+          end
       end
-    end
+
+  else
+      arr.sort
   end
-  array
+
+  output = arr.join(", ")
+  puts "[#{output}]"
 end
 
-new_arr = bubble_sort_by(["hi","hello","hey"]) do |left, right|
-  left.length - right.length
-end
+#given test
+bubble_sort_by(["hello", "hey", "hi"]) {|left, right| left.length - right.length
+}
 
-puts new_arr
+bubble_sort_by(["diego","jair","microverse","course Ruby","javascript","php"]) do |first, second|
+  first_name_split = first.split(/ /)
+  second_name_split = second.split(/ /)
+
+  first_name_split[-1].downcase <=> second_name_split[-1].downcase
+end
