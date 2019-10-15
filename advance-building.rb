@@ -1,21 +1,27 @@
-def bubble_Sort(array)
-  n = array.length
-  swapped = true
-
-  while swapped do
-    swapped = false
-    (n-1).times do |i|
-      if array[i] > array[i+1]
-        array[i], array[i+1] = array[i+1], array[i]
-      swapped = true
+def bubble_sort array
+  sorted_array = []
+  while (array.length != 0)
+    array.each_index do |index|
+      if (index != array.length-1 && array[index] > array[index+1])
+        array[index], array[index+1] = array[index+1], array[index]
       end
     end
+    sorted_array.insert(0, array.pop)
   end
-  print array 
+  sorted_array
 end
 
-bubble_Sort([89,45,2,5,12,90])
-
-
-# bubble_sort([4,3,78,2,0,2])
-# => [0,2,2,3,4,78]
+def bubble_sort_by array
+  n = array.length
+  sorted_array = []
+  while (n != 0)
+    (n-1).times do |i|
+      diff = yield(array[i],array[i+1])
+      if (diff > 0)
+        array[i], array[i+1] = array[i+1], array[i]
+      end
+    end
+    sorted_array.insert(0, array.pop)
+  end
+  sorted_array
+end
