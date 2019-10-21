@@ -15,7 +15,7 @@ def bubble_sort_by(array)
       array[x], array[x + 1] = array[x + 1], array[x]
     end
   end
-  (arra.size - 1).times do |x|
+  (array.size - 1).times do |x|
     if array[x].length - array[x + 1].length > 0
       bubble_sort_by(array) do |left, right|
         yield(array[x], array[x + 1])
